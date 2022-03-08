@@ -1,1 +1,1 @@
-# adventure-game
+This is a simple text-based choose your own adventure game made for a school project.
