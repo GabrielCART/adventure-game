@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+body{
+    background-color:blanchedalmond ;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 64px;
+}
+p#outputBox{
+    display:none;
+    border: 1px solid black;
+    width: 95vw;
+    height:40vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.gameButton {
+    font-family: 'Special Elite', cursive;
+    text-align: justify;
+    font-size: 36px;
+    background: rgba( 255, 0, 0, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+    border-radius: 5px;
+}
+.gameButton:hover {
+    color: white;
+    font-family: 'Special Elite', cursive;
+    text-align: justify;
+    font-size: 36px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+}
+#startGame {
+    font-family: 'Special Elite', cursive;
+    text-align: justify;
+    font-size: 36px;
+    background: rgba( 255, 0, 0, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+    border-radius: 5px;
+}
+#startGame:hover {
+    color: white;
+    font-family: 'Special Elite', cursive;
+    text-align: justify;
+    font-size: 36px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+}
