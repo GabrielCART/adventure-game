@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
 body{
     background-color:blanchedalmond ;
 }
@@ -16,16 +16,25 @@ p#outputBox{
     height:40vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size:48px ;
+}
+#gameButtons{
+    display: flex;
+    justify-content: space-around;
 }
 .gameButton {
     font-family: 'Special Elite', cursive;
     text-align: justify;
     font-size: 36px;
     background: rgba( 255, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.4);
     backdrop-filter: blur( 12px );
     -webkit-backdrop-filter: blur( 12px );
     border-radius: 5px;
+
 }
 .gameButton:hover {
     color: white;
@@ -35,12 +44,16 @@ p#outputBox{
     background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
 }
+.gameButton:active{
+    transform: translateY(5px);
+    box-shadow:0 8px 32px 0 rgba( 31, 38, 135, 0.5 ); ;
+}
 #startGame {
     font-family: 'Special Elite', cursive;
     text-align: justify;
     font-size: 36px;
     background: rgba( 255, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.4 );
     backdrop-filter: blur( 12px );
     -webkit-backdrop-filter: blur( 12px );
     border-radius: 5px;
