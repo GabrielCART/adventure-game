@@ -29,19 +29,18 @@ const storyVars = {
         ending:true
     }
 }
-var gameButtons = document.getElementById(`gameButtons`)
-function buttonClick(idInput){
-    var currentStoryBlock = storyVars[idInput]
-    document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text
-    document.getElementById(`outputBox`).style.display = `block`
-    var gameButtons = document.getElementById(`gameButtons`)
-    if (currentStoryBlock.ending == false){
+function buttonClick(idInput){ //function to handle buttons
+    var currentStoryBlock = storyVars[idInput] //sets what part of the story the user is on
+    document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text //changes the output box to display the text of the current part of the story
+    document.getElementById(`outputBox`).style.display = `block` //shows the output box to the user if it isn't visible already
+    var gameButtons = document.getElementById(`gameButtons`) //Retrieves content of gameButtons form
+    if (currentStoryBlock.ending == false){ //checks if current story block is an ending
         var addedButtons = ``
         currentStoryBlock.options.forEach((elements, index) => {
             addedButtons += `<input type="button" class="gameButton" onclick="buttonClick(this.id)" value="${currentStoryBlock.options[index][0]}" id="${currentStoryBlock.options[index][1]}"></input>`})
         gameButtons.innerHTML = addedButtons
     }
     else {
-        gameButtons.innerHTML = `<button onclick="buttonClick(this.id)" id="intro" >(Re)Start Your Adventure!</button>`
+        gameButtons.innerHTML = `<button class="gameButton" onclick="buttonClick(this.id)" id="intro" >(Re)Start Your Adventure!</button>`
     }
 }
