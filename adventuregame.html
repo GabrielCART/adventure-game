@@ -7,18 +7,17 @@
     <title>La île Sinistre</title>
     <link rel="stylesheet" href="style.css">
     <script src="game.js"></script>
-    <audio id="start" src="start.mp3" preload="auto"></audio>
 </head>
 <body>
-    <div class="typewriter"><h1>La île Sinistre</h1></div>
-    <hr>
+    <h1 class="typewriter">La île Sinistre</h1>
     <p id="outputBox"></p>
     <form id="gameButtons">
         <button class="gameButton" onclick="buttonClick(this.id); playSound(`start`);" id="intro" >Start Your Adventure!</button>
     </form>
-<footer>
-    <p>Created by Kingdavid and Gabriel</p>
-    <p>Special thanks to <a href="https://www.innersloth.com/">InnerSloth™</a> for the sound effects used in game.</p>
-</footer>
+    <footer>
+        <p>Created by Kingdavid and Gabriel</p>
+        <p>Special thanks to <a href="https://www.innersloth.com/">InnerSloth™</a> for the sound effects used in game.</p>
+    </footer>
+    <audio id="start" src="start.mp3" preload="auto"></audio>
 </body>
 </html>
