@@ -41,9 +41,10 @@ p#outputBox{
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 12px;
     display: none;
-    font-family: 'Courier-New';
-    font-size:48px;
+    font-family: 'Courier New';
+    font-size:42px;
     color: rgb(0, 150, 0);
     text-shadow: 1px 1px 24px rgba( 0, 180, 0, 1);
 }
@@ -79,7 +80,7 @@ footer{
     bottom:0px;
     width: 100%;
     text-align: center;
-    font-family: 'Courier-New';
+    font-family: 'Courier New';
     font-size:24px;
     color: rgb(0, 150, 0);
     text-shadow: 1px 1px 24px rgba( 0, 180, 0, 1);

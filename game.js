@@ -1,5 +1,5 @@
-function playSound(){
-    document.getElementById(`start`).play();
+function playSound(sound){
+    document.getElementById(sound).play();
 }
 const storyVars = {
     intro:{
