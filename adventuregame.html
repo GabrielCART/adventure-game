@@ -10,14 +10,25 @@
 </head>
 <body>
     <h1 class="typewriter">La île Sinistre</h1>
+    <div id="startText">
+        <img src="lighthouse.jpg" alt="Starter Image" height="250">
+        <h2>
+            La île Sinistre is set on a fictional island off the coast of France. Join Dr. Crowbar and the rest of his French class in a journey of danger, survival, conspiracy, and action.
+        </h2>
+        <p>
+            For the best experience, please use headphones.
+        </p>
+    </div>
     <p id="outputBox"></p>
     <form id="gameButtons">
-        <button class="gameButton" onclick="buttonClick(this.id); playSound(`start`);" id="intro" >Start Your Adventure!</button>
+        <button class="gameButton" onclick="buttonClick(this.id); playSound(`start`); stopSound(`bgm`);" id="intro">Start Your Adventure!</button>
     </form>
     <footer>
         <p>Created by Kingdavid and Gabriel</p>
         <p>Special thanks to <a href="https://www.innersloth.com/">InnerSloth™</a> for the sound effects used in game.</p>
     </footer>
+    <audio id="bgm" autoplay loop src="sneakysnitch.mp3" preload="auto"></audio>
     <audio id="start" src="start.mp3" preload="auto"></audio>
+    <audio id="click" src="click.mp3" preload="auto"></audio>
 </body>
 </html>

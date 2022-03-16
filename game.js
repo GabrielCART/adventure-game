@@ -1,6 +1,9 @@
 function playSound(sound){ //audio playback function
     document.getElementById(sound).play(); //plays sound based on argument from function call
 }
+function stopSound(sound){ //audio stop playback function
+    document.getElementById(sound).pause(); //pauses sound based on argument from function call
+}
 const storyVars = {
     intro:{
         text: `Your journey begins in the lovely city of New York. You come to your French class ready to apprendre, but your teacher; Le docteur Crowbar, has a better idea and decides that this year the entire class is taking a cruise to France. Of course everyone is ecstatic, even the class president, Billy Bobby Bones is cheerful. Soon enough, the big day arrives and everyone gets into the ship with smiling faces and happy hearts. But the Atlantic ocean wasn't so happy. That night you wake up to find yourself with a face full of sand and salty sea water. You realize that your ship has been wrecked and you're very close to an island with a lighthouse sitting atop it's cliffs. What do you want to do?`,
@@ -28,7 +31,7 @@ const storyVars = {
         ],
     },
     drown:{
-        text: `You give in to the overwhelming force of the ocean. As the waves crash over you, you come to terms with your end. Salty seawater fills your lungs, and with the pain becoming unbearable you sink beneath the surface.`,
+        text: `You give in to the <a href=https://www.youtube.com/watch?v=dQw4w9WgXcQ>overwhelming force</a> of the ocean. As the waves crash over you, you come to terms with your end. Salty seawater fills your lungs, and with the pain becoming unbearable you sink beneath the surface. </br></br>Lazy - Premature Ending`,
         options:false,
     }
 }
@@ -36,14 +39,15 @@ function buttonClick(idInput){ //function to handle buttons
     var currentStoryBlock = storyVars[idInput] //sets what part of the story the user is on
     document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text //changes the output box to display the text of the current part of the story
     document.getElementById(`outputBox`).style.height = `60vh` //shows the output box to the user if it isn't visible already
+    document.getElementById(`startText`).style.height = `0` //hides the starting text box to the user if it is visible
     var gameButtons = document.getElementById(`gameButtons`) //Retrieves content of gameButtons form
     if (currentStoryBlock.options != false){ //checks if current story block is not an ending
         var addedButtons = `` //clears current button list
         currentStoryBlock.options.forEach((elements, index) => {
-            addedButtons += `<input type="button" class="gameButton" onclick="buttonClick(this.id)" value="${currentStoryBlock.options[index][0]}" id="${currentStoryBlock.options[index][1]}"></input>`}) //creates new buttons for each story option
+            addedButtons += `<input type="button" class="gameButton" onclick="buttonClick(this.id); playSound('click');" value="${currentStoryBlock.options[index][0]}" id="${currentStoryBlock.options[index][1]}"></input>`}) //creates new buttons for each story option
         gameButtons.innerHTML = addedButtons //adds new buttons to the list
     }
     else { //if story block is an ending
-        gameButtons.innerHTML = `<button class="gameButton" onclick="buttonClick(this.id); playSound();" id="intro" >(Re)Start Your Adventure!</button>` //create a restart button
+        gameButtons.innerHTML = `<button class="gameButton" onclick="buttonClick(this.id); playSound('start');" id="intro" >(Re)Start Your Adventure!</button>` //create a restart button
     }
 }
