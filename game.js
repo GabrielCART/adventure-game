@@ -26,8 +26,15 @@ const storyVars = {
             [`Fight Dr. Crowbar for leadership.`, `fightCrowbar`],
         ],
     },
+    swimtoGroup:{
+        text: `You begin to swim towards the shore. Though the bitter cold of the water makes it difficult, you are motivated by the sillhouetes on the coast It is Dr. Crowbar and the other survivors sitting on a beach where the cliffs drop low and the upper part of the island can be reached. Surprisingly, everyone is still alive and they are looking for supplies and rations, but everyone is torn between choosing a leader or picking berries. Do you want to let Dr. Crowbar lead or try to establish yourself as leader?`,
+        options:[
+            [`Let Dr. Crowbar lead.`, `crowbarLeads`],
+            [`Fight Dr. Crowbar for leadership.`, `fightCrowbar`],
+        ],
+    },
     crowbarLeads:{
-        text: `You start to look around, determined to get off the wretched island and go back home, you continue to walk around the base of the cliffs until you recognize something, or rather someone. It is Dr. Crowbar and the other survivors sitting on a beach where the cliffs drop low and the upper part of the island can be reached. Surprisingly, everyone is still alive and they are looking for supplies and rations, but everyone is torn between choosing a leader or picking berries. Do you want to let Dr. Crowbar lead or try to establish yourself as leader?`,
+        text: ``,
         options:[
             [`Let Dr. Crowbar lead.`, `crowbarLeads`],
             [`Fight Dr. Crowbar for leadership.`, `fightCrowbar`],
@@ -58,7 +65,7 @@ const storyVars = {
     notSwim:{
         text: `The currents take you around the island to another area off the coast. You think you can see the bright orange of life jackets littering the sand.`,
         options:[
-            [`Try to swim to shore now.`, `moveAroundCliffs`],
+            [`Try to swim to shore now.`, `swimtoGroup`],
             [`Let the currents take you.`, `drown`]
         ],
     },
