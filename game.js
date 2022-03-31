@@ -192,7 +192,7 @@ const storyVars = {
 function buttonClick(idInput){ //function to handle buttons
     var currentStoryBlock = storyVars[idInput] //sets what part of the story the user is on
     document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text //changes the output box to display the text of the current part of the story
-    document.getElementById(`outputBox`).style.height = `60vh` //shows the output box to the user if it isn't visible already
+    document.getElementById(`outputBox`).style.height = `600px` //shows the output box to the user if it isn't visible already
     document.getElementById(`startText`).style.height = `0` //hides the starting text box to the user if it is visible
     var gameButtons = document.getElementById(`gameButtons`) //Retrieves content of gameButtons form
     if (currentStoryBlock.options != false){ //checks if current story block is not an ending

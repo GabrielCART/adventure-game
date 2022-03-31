@@ -9,26 +9,22 @@
     <script src="game.js"></script>
 </head>
 <body>
-    <h1 class="typewriter">La île Sinistre</h1>
+    <h1><a class="headerlink" href="adventuregame.html">La île Sinistre</a><span id="blinking">|</span></h1>
+    <hr>
     <div id="startText">
         <img src="Media/Images/lighthouse.jpg" alt="Starter Image" height="250">
         <h2>
             La île Sinistre is set on a fictional island off the coast of France. Join Dr. Crowbar and the rest of his French class in a journey of danger, survival, conspiracy, and action.
         </h2>
-        <p>
-            For the "best" experience, please use headphones.
-        </br>
-            Find all the ✨Easter Eggs✨
-        </p> 
-        
+        <p>Try to find all the <strong>easter eggs</strong>!</br>For the "best" experience, please enable audio.</p>
     </div>
     <p id="outputBox"></p>
     <form id="gameButtons">
         <button class="gameButton" onclick="buttonClick(this.id); playSound(`start`); stopSound(`bgm`);" id="intro">Start Your Adventure!</button>
     </form>
     <footer>
-        <p>Created by Kingdavid and Gabriel</p>
-        <p>Special thanks to <a href="https://www.innersloth.com/">InnerSloth™</a> for the sound effects used in game.</p>
+        <p>Game by Kingdavid and Gabriel</p>
+        <p>Special thanks to <a href="https://www.innersloth.com/">InnerSloth™</a> for the sounds used in this game, as well as <a href="https://www.youtube.com/channel/UCSZXFhRIx6b0dFX3xS8L1yQ">Kevin Macleod</a> for the music used in this game.</p>
     </footer>
     <audio id="bgm" autoplay loop src="Media/Audio/sneakysnitch.mp3" preload="auto"></audio>
     <audio id="start" src="Media/Audio/start.mp3" preload="auto"></audio>
