@@ -1,9 +1,11 @@
 function playSound(sound){ //audio playback function
     document.getElementById(sound).play(); //plays sound based on argument from function call
 }
-function stopSound(sound){ //audio stop playback function
+
+function stopSound(sound){ //audio pause playback function
     document.getElementById(sound).pause(); //pauses sound based on argument from function call
 }
+
 const storyVars = {
     intro:{
         text: `Your journey begins in the lovely city of New York. You come to your French class ready to learn, but your teacher; Dr. Crowbar, has a better idea and decides that this year the entire class is taking a cruise to France. Of course everyone is ecstatic, even the class president, Billy Bobby Bones is cheerful. Soon enough, the big day arrives and everyone gets into the ship with smiling faces and happy hearts. But the Atlantic ocean wasn't so happy. The next morning you wake up to the sound of panicked screaming. Then, you're knocked right out of your bed as the ship suddenly changes direction. An ear piercingly loud sound unmistakable as the hull of the ship you're on being ripped apart suddenly echoes around you. Knowing that you have next to no time to grab anything, you sprint for the stairs, climbing them to the deck, and you dive over the railing. You swim back up to the surface and open your eyes (which isn't easy to do given the salty seawater you've now been soaked in.) Luckily, you're very close to an island with a lighthouse sitting atop its cliffs. What do you want to do?`,
@@ -189,19 +191,23 @@ const storyVars = {
         options:false,
     }
 }
+
+function gameStart(){//function for the start of the game
+    document.getElementById(`outputBox`).style.height = `600px` //shows the output box
+    document.getElementById(`startText`).style.height = `0` //hides the starting text box
+}
+
 function buttonClick(idInput){ //function to handle buttons
-    var currentStoryBlock = storyVars[idInput] //sets what part of the story the user is on
-    document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text //changes the output box to display the text of the current part of the story
-    document.getElementById(`outputBox`).style.height = `600px` //shows the output box to the user if it isn't visible already
-    document.getElementById(`startText`).style.height = `0` //hides the starting text box to the user if it is visible
-    var gameButtons = document.getElementById(`gameButtons`) //Retrieves content of gameButtons form
-    if (currentStoryBlock.options != false){ //checks if current story block is not an ending
-        var addedButtons = `` //clears current button list
+    var currentStoryBlock = storyVars[idInput] //sets the active story block
+    document.getElementById(`outputBox`).innerHTML = currentStoryBlock.text //updates output text
+    var gameButtons = document.getElementById(`gameButtons`) //accesses the game buttons
+    if (currentStoryBlock.options != false){ //checks that the current story block is not an ending
+        var addedButtons = `` //removes all buttons
         currentStoryBlock.options.forEach((elements, index) => {
-            addedButtons += `<input type="button" class="gameButton" onclick="buttonClick(this.id); playSound('click');" value="${currentStoryBlock.options[index][0]}" id="${currentStoryBlock.options[index][1]}"></input>`}) //creates new buttons for each story option
-        gameButtons.innerHTML = addedButtons //adds new buttons to the list
+            addedButtons += `<input type="button" class="gameButton" onclick="buttonClick(this.id); playSound('click');" value="${currentStoryBlock.options[index][0]}" id="${currentStoryBlock.options[index][1]}"></input>`}) //creates new buttons for each option
+        gameButtons.innerHTML = addedButtons //adds new buttons to the form
     }
-    else { //if story block is an ending
+    else { //if the current story block is an ending
         gameButtons.innerHTML = `<button class="gameButton" onclick="buttonClick(this.id); playSound('start');" id="intro" >(Re)Start Your Adventure!</button>` //create a restart button
     }
 }
