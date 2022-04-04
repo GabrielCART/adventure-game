@@ -68,6 +68,8 @@ hr{
     transition: height 2.5s;
 }
 #startText>h2{
+    margin-left: 20px;
+    margin-right: 20px;
     font-size: 40px;
     text-shadow: 1px 1px 24px rgba( 0, 180, 0, 1);
     font-family: 'Courier New';
