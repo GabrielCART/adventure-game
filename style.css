@@ -21,11 +21,12 @@ a.headerlink{
     text-shadow: 1px 1px 24px rgba( 0, 180, 0, 1);
 }
 #blinking{
-    animation: blink 1.2s step-end 10;
+    animation: blink 1.2s step-end 10 forwards;
 }
 @keyframes blink{
-    from, to{visibility:hidden}
-    50%{visibility:visible}
+    from {visibility:hidden}
+    50% {visibility:visible}
+    to {visibility:hidden}
 }
 h1{
     line-height: 60px;
