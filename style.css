@@ -21,7 +21,7 @@ a.headerlink{
     text-shadow: 1px 1px 24px rgba( 0, 180, 0, 1);
 }
 #blinking{
-    animation: blink 1.2s step-end infinite;
+    animation: blink 1.2s step-end 10;
 }
 @keyframes blink{
     from, to{visibility:hidden}
